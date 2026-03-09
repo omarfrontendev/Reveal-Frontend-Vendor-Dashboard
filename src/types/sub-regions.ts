@@ -1,5 +1,5 @@
 export interface SubRegionBody {
-    id: number,
+    id?: number,
     nameEn: string;
     nameAr: string;
     code: string;

@@ -1,6 +1,5 @@
 // import { Badge } from "@/components/ui/badge";
 import { UserActionsCell } from "./UserActionCell";
-import { Button } from "@/components/ui/button";
 import { useTranslation } from "react-i18next";
 
 export const useUsersColumns = (setRefreshData: any) => {

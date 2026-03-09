@@ -7,7 +7,6 @@ import { mallsSlice } from "./features/malls/malls.slice";
 import { boothsSlice } from "./features/booths/booths.slice";
 import { shiftsSlice } from "./features/shifts/shifts.slice";
 import { usersSlice } from "./features/users/users.slice";
-import { vendorsSlice } from "./features/vendors/vendors.slice";
 import { rolesSlice } from "./features/roles/roles.slice";
 
 export const store = configureStore({
@@ -20,7 +19,6 @@ export const store = configureStore({
     booths: boothsSlice.reducer,
     shifts: shiftsSlice.reducer,
     users: usersSlice.reducer,
-    vendors: vendorsSlice.reducer,
     roles: rolesSlice.reducer,
   },
 });

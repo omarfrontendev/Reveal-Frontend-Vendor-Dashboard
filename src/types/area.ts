@@ -1,5 +1,5 @@
 export interface AreaBody {
-    id: number,
+    id?: number,
     nameEn: string;
     nameAr: string;
     areaCode: string;

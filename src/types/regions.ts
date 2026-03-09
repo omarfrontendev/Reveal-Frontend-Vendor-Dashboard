@@ -1,5 +1,5 @@
 export interface RegionBody {
-    id: number,
+    id?: number,
     nameEn: string;
     nameAr: string;
     regionCode: string;

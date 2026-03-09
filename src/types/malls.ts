@@ -1,5 +1,5 @@
 export interface MallBody {
-    id: number,
+    id?: number,
     nameEn: string;
     nameAr: string;
     code: string;
