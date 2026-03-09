@@ -11,6 +11,7 @@ export const useAreasTableLogic = () => {
     const dispatch = useDispatch<AppDispatch>();
 
     const { areas, loading, total: totalCount, error } = useSelector((state: any) => state.area);
+    const { vendorId } = useSelector((state: any) => state.auth);
 
     // Local state to trigger manual refresh
     const [refreshData, setRefreshData] = useState(false);
@@ -20,19 +21,20 @@ export const useAreasTableLogic = () => {
     const [tableOptions, setTableOptions] = useState<AreasTableOptions>({
         pageIndex: 0,
         pageSize: 10,
-        search: ""
+        search: "",
+        vendorId,
     });
 
     // Fetch areas whenever table options or refreshData changes
     useEffect(() => {
-        const { pageIndex, pageSize, search } = tableOptions;
-
+        const { pageIndex, pageSize, search, vendorId } = tableOptions;
 
         dispatch(
             fetchAreas({
                 page: pageIndex + 1, // API expects 1-based page
                 limit: pageSize,
                 search: search || undefined,
+                vendorId
             })
         );
     }, [dispatch, tableOptions, refreshData]);

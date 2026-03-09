@@ -19,13 +19,15 @@ export interface CreateAreaResponse {
 };
 
 export interface AreasTableOptions {
+    vendorId?: number;
     pageIndex: number;
     pageSize: number;
     search: string;
 };
 
 export interface GetAreasPayload {
-  page: number;
-  limit: number;
-  search: string;
+    vendorId?: number;
+    page: number;
+    limit: number;
+    search: string;
 }
