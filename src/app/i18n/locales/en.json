@@ -60,10 +60,10 @@
     "subtitle": "Platform Management & Operations"
   },
   "roles": {
-    "ClientAdmin": "Client Admin",
-    "ClientMobileSupervisor": "Mobile Supervisor",
-    "MobileSales": "Mobile Sales",
-    "ClientSuperAdmin": "Client Super Admin",
+    "VendorAdmin": "Vendor Admin",
+    "VendorMobileSupervisor": "Vendor Mobile Supervisor",
+    "VendorMobileSales": "Vendor Mobile Sales",
+    "VendorSuperAdmin": "Vendor Super Admin",
     "title": "Roles",
     "activeRoles": "{{count}} role",
     "activeRoles_plural": "{{count}} roles",
