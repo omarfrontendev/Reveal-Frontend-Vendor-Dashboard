@@ -6,13 +6,13 @@ import useSWR from 'swr';
 
 interface ApiResponse<T> {
     data: {
-        SubRegion: T;
+        VendorSubRegion: T;
     };
 }
 
 const fetcher = async <T>(url: string): Promise<T> => {
     const response = await api.get<ApiResponse<T>>(url);
-    return response.data?.data?.SubRegion as T;
+    return response.data?.data?.VendorSubRegion as T;
 };
 
 export const useAllSubRegions = () => {

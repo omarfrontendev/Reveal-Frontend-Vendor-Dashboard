@@ -29,7 +29,7 @@ export const boothsSlice = createSlice({
             .addCase(fetchBooths.fulfilled, (state, action) => {
                 state.loading = false;
                 state.error = null;
-                state.booths = action.payload?.data?.data as CreateBoothDto[];
+                state.booths = action.payload?.data?.VendorBooth as CreateBoothDto[];
                 state.total = action.payload?.data?.meta?.total || 0;
             })
             .addCase(fetchBooths.rejected, (state, action) => {

@@ -29,7 +29,7 @@ export const regionsSlice = createSlice({
             .addCase(fetchRegions.fulfilled, (state, action) => {
                 state.loading = false;
                 state.error = null;
-                state.regions = action.payload?.data?.Region as RegionBody[];
+                state.regions = action.payload?.data?.VendorRegion as RegionBody[];
                 state.total = action.payload?.data?.meta?.total || 0;
             })
             .addCase(fetchRegions.rejected, (state, action) => {

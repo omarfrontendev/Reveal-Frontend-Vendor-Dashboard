@@ -29,7 +29,7 @@ export const shiftsSlice = createSlice({
             .addCase(fetchShifts.fulfilled, (state, action) => {
                 state.loading = false;
                 state.error = null;
-                state.shifts = action.payload?.data as ShiftBody[];
+                state.shifts = action.payload?.data?.VendorShift as ShiftBody[];
                 state.total = action.payload?.data?.meta?.total || 0;
             })
             .addCase(fetchShifts.rejected, (state, action) => {

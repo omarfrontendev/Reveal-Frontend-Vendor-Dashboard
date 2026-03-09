@@ -29,7 +29,7 @@ export const mallsSlice = createSlice({
             .addCase(fetchMalls.fulfilled, (state, action) => {
                 state.loading = false;
                 state.error = null;
-                state.malls = action.payload?.data?.Mall as MallBody[];
+                state.malls = action.payload?.data?.VendorMall as MallBody[];
                 state.total = action.payload?.data?.meta?.total || 0;
             })
             .addCase(fetchMalls.rejected, (state, action) => {

@@ -6,13 +6,13 @@ import useSWR from 'swr';
 
 interface ApiResponse<T> {
     data: {
-        Area: T;
+        VendorArea: T;
     };
 }
 
 const fetcher = async <T>(url: string): Promise<T> => {
     const response = await api.get<ApiResponse<T>>(url);
-    return response.data?.data?.Area as T;
+    return response.data?.data?.VendorArea as T;
 };
 
 export const useAreas = () => {

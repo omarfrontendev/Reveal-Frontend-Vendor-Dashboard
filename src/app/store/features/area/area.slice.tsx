@@ -29,7 +29,7 @@ export const areaSlice = createSlice({
             .addCase(fetchAreas.fulfilled, (state, action) => {
                 state.loading = false;
                 state.error = null;
-                state.areas = action.payload?.data?.Area as AreaBody[];
+                state.areas = action.payload?.data?.VendorArea as AreaBody[];
                 state.total = action.payload?.data?.meta?.total || 0;
             })
             .addCase(fetchAreas.rejected, (state, action) => {

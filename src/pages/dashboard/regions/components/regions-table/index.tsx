@@ -18,7 +18,6 @@ export default function RegionsTable() {
         onFilterByAreas
     } = useRegionsTableLogic();
 
-
     const handleSearch = useCallback((value: string) => {
         onSearch(value);
     }, [onSearch]);
