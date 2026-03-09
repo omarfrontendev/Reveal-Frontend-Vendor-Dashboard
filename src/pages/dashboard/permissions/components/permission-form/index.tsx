@@ -1,0 +1,194 @@
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { getPermissionSchema } from "./permission.schema";
+import { Button } from "@/components/ui/button";
+import { Form } from "@/components/ui/form";
+import FormField from "@/components/ui/FormField";
+import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { PermissionFields } from "./permission.elemets";
+import { modules, ModulesOptions } from "@/constants/modules";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Label } from "@/components/ui/label";
+import { useUpsertPermission } from "@/hooks/permissions/useUpsertPermission";
+import { useSingleRole } from "@/hooks/permissions/useSingleRole";
+import { useEffect } from "react";
+
+export default function PermissionForm({ id }: { id?: string }) {
+
+    const navigate = useNavigate();
+    const { t } = useTranslation();
+
+    // create permission mutation
+    const { mutate: savePermission, isPending } = useUpsertPermission({ id });
+
+    const { role } = useSingleRole(id);
+
+    const form = useForm({
+        resolver: zodResolver(getPermissionSchema()),
+        mode: "all"
+    });
+
+    useEffect(() => {
+        if (role) {
+            form.reset({
+                nameEn: role.nameEn,
+                nameAr: role.nameAr,
+                permissionKeys: role.permissionKeys
+            });
+        }
+    }, [role, form]);
+
+    const onSubmit = (data: any) => {
+        savePermission(data, {
+            onSuccess: () => {
+                form.reset();
+                navigate("/roles");
+            },
+        });
+    };
+
+    const permissionKeys = form.watch("permissionKeys") || [];
+
+    return (
+        <Form {...form}>
+            <form
+                id="user-form"
+                onSubmit={form.handleSubmit(onSubmit)}
+                className="block w-full space-y-6"
+            >
+                <div className="w-full grid grid-cols-12 gap-4">
+                    {PermissionFields().map((field) => (
+                        <FormField
+                            key={field.name}
+                            form={form}
+                            {...field}
+                        />
+                    ))}
+                    <div className="col-span-12 space-y-4">
+                        {/* Title */}
+                        <div>
+                            <h2 className="text-lg font-semibold">Permissions</h2>
+                            <p className="text-sm text-slate-500">
+                                Select the permissions you want to grant for each module
+                            </p>
+                        </div>
+
+                        {/* Permissions Container */}
+                        <div className="flex items-center gap-2 mb-4">
+                            <Checkbox
+                                id="select-all-modules"
+                                checked={modules.every((module) =>
+                                    ModulesOptions.every((item) =>
+                                        permissionKeys.includes(`${module}.${item}`)
+                                    )
+                                )}
+                                onCheckedChange={(checked) => {
+                                    if (checked) {
+                                        const allPermissions = modules.flatMap((module) =>
+                                            ModulesOptions.map((item) => `${module}.${item}`)
+                                        );
+
+                                        form.setValue("permissionKeys", allPermissions);
+                                    } else {
+                                        form.setValue("permissionKeys", []);
+                                    }
+                                }}
+                            />
+
+                            <Label htmlFor="select-all-modules" className="cursor-pointer font-medium">
+                                Select All Permissions
+                            </Label>
+                        </div>
+                        <div className="grid grid-cols-12 gap-4 border rounded-xl p-5 bg-slate-50">
+                            {modules.map((module) => {
+                                const modulePermissions = ModulesOptions.map(
+                                    (item) => `${module}.${item}`
+                                );
+
+                                const isAllSelected = modulePermissions.every((p) =>
+                                    permissionKeys.includes(p)
+                                );
+                                return (
+                                    <div
+                                        key={module}
+                                        className="col-span-6 bg-white border rounded-lg p-4 shadow-sm"
+                                    >
+                                        <h3 className="font-semibold text-sm mb-3 capitalize border-b pb-2 flex items-center justify-between">
+                                            {module}
+                                            <div className="flex items-center gap-2">
+                                                <Checkbox
+                                                    id={`${module}-select-all`}
+                                                    checked={isAllSelected}
+                                                    onCheckedChange={(checked) => {
+                                                        if (checked) {
+                                                            form.setValue("permissionKeys", [
+                                                                ...new Set([...permissionKeys, ...modulePermissions]),
+                                                            ]);
+                                                        } else {
+                                                            form.setValue(
+                                                                "permissionKeys",
+                                                                permissionKeys.filter(
+                                                                    (p: string) => !modulePermissions.includes(p)
+                                                                )
+                                                            );
+                                                        }
+                                                    }}
+                                                />
+                                                <Label
+                                                    htmlFor={`${module}-select-all`}
+                                                    className="text-xs text-slate-500"
+                                                >
+                                                    All
+                                                </Label>
+                                            </div>
+                                        </h3>
+
+                                        <div className="flex items-center gap-4 flex-wrap">
+                                            {ModulesOptions.map((item) => {
+                                                const key = `${module}.${item}`;
+
+                                                return (
+                                                    <div key={key} className="flex items-center gap-2">
+                                                        <Checkbox
+                                                            id={key}
+                                                            checked={permissionKeys.includes(key)}
+                                                            onCheckedChange={(checked) => {
+                                                                if (checked) {
+                                                                    form.setValue("permissionKeys", [...permissionKeys, key]);
+                                                                } else {
+                                                                    form.setValue(
+                                                                        "permissionKeys",
+                                                                        permissionKeys.filter((p: string) => p !== key)
+                                                                    );
+                                                                }
+                                                            }}
+                                                        />
+
+                                                        <Label
+                                                            htmlFor={key}
+                                                            className="cursor-pointer text-sm text-slate-600"
+                                                        >
+                                                            {item.toUpperCase()}
+                                                        </Label>
+                                                    </div>
+                                                );
+                                            })}
+                                        </div>
+                                    </div>
+                                )
+                            })}
+                        </div>
+                    </div>
+                </div>
+                <Button
+                    type="submit"
+                    disabled={isPending}
+                    className="w-full h-12 bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:shadow-lg hover:shadow-purple-500/50 transition-all"
+                >
+                    {isPending ? t("buttons.saving") : t("buttons.save")}
+                </Button>
+            </form>
+        </Form>
+    );
+}

@@ -1,0 +1,383 @@
+{
+  "login": {
+    "brandTitle": "Reveal Vendor Admin",
+    "brandSubtitle": "Client Management Console",
+    "heroTitle": "Client Command Center",
+    "heroDescription": "Full control over regions, malls, booths and team management.",
+    "email": "Email Address",
+    "password": "Password",
+    "enterPassword": "Enter your password",
+    "rememberDevice": "Remember this device",
+    "next": "Next",
+    "signIn": "Sign In",
+    "processing": "Processing...",
+    "twoFactorTitle": "Two-Factor Authentication",
+    "twoFactorSubtitle": "Enter the 6-digit code from your authenticator app",
+    "authCode": "Authentication Code",
+    "securityNotice": "Security Notice",
+    "securityMessage": "All client admin actions are logged and monitored.",
+    "authorizedOnly": "Authorized access only",
+    "contactSecurity": "Contact Support",
+    "forgetPassword": "Forget password?",
+    "adminAccess": "Admin Access",
+    "platformCenter": "Platform Command Center",
+    "platformCenterDesc": "Full platform control with client management, system configuration, and advanced analytics.",
+    "msgSuccess": "Welcome back! You are logged in.",
+    "authorizedonly": "Authorized personnel only",
+    "verify": "Verify & Reset Password"
+  },
+  "forgetPassword": {
+    "title": "Forget Password"
+  },
+  "features": {
+    "manageRegions": "Create & manage regions",
+    "manageMalls": "Create & manage malls",
+    "manageBooths": "Create & manage booths",
+    "manageUsers": "Manage team members & permissions"
+  },
+  "sidebar": {
+    "main": "Main",
+    "overview": "Overview",
+    "areas": "Areas",
+    "regions": "Regions",
+    "subRegions": "Sub-Regions",
+    "malls": "Malls",
+    "shifts": "Shifts",
+    "booths": "Booths",
+    "users": "Users",
+    "title": "Vendor Admin",
+    "search": "Search modules...",
+    "logout": "Logout",
+    "organization": "Organization",
+    "dashboardUsers": "Dashboard Users",
+    "mobileUsers": "Mobile Users",
+    "vendors": "Vendors",
+    "view": "View",
+    "roles": "Roles"
+  },
+  "header": {
+    "title": "Reveal Provider Console",
+    "subtitle": "Platform Management & Operations"
+  },
+  "roles": {
+    "ClientAdmin": "Client Admin",
+    "ClientMobileSupervisor": "Mobile Supervisor",
+    "MobileSales": "Mobile Sales",
+    "ClientSuperAdmin": "Client Super Admin",
+    "title": "Roles",
+    "activeRoles": "{{count}} role",
+    "activeRoles_plural": "{{count}} roles",
+    "searchPlaceholder": "Search by name",
+    "create": "Create Role",
+    "update": "Update Role",
+    "createDescription": "Create a new role with name (en, ar) and permissions",
+    "updateDescription": "Update an existing role with name (en, ar) and permissions",
+    "deleteTitle": "Delete Role"
+  },
+  "fields": {
+    "actions": "Actions",
+    "area": "Area",
+    "region": "Region",
+    "subregion": "Subregion",
+    "mall": "Mall",
+    "shift": "Shift",
+    "searchNameOrCode": "",
+    "boothsCount": "Booths Count",
+    "mobileUsersCount": "Mobile Users Count",
+    "dashboardUsersCount": "Dashboard Users Count",
+    "cameraUserName": "Username (camera)",
+    "rtspUrl": "rtspUrl (camera)",
+    "cameraPassword": "password (camera)",
+    "assignedCount": "Assigned Count",
+    "createdAt": "Created At",
+    "name": {
+      "label": "Name",
+      "placeholder": "Enter name"
+    },
+    "nameEn": {
+      "label": "Name (English)",
+      "placeholder": "Enter name in English"
+    },
+    "nameAr": {
+      "label": "Name (Arabic)",
+      "placeholder": "Enter name in Arabic"
+    },
+    "code": {
+      "label": "Code",
+      "placeholder": "Enter code"
+    },
+    "day": {
+      "label": "Day",
+      "placeholder": "Select day..."
+    },
+    "startTime": {
+      "label": "Start Time",
+      "placeholder": "Enter start time"
+    },
+    "endTime": {
+      "label": "End Time",
+      "placeholder": "Enter end time"
+    },
+    "coords": {
+      "label": "Select coords on map"
+    },
+    "firstName": {
+      "label": "First Name",
+      "placeholder": "Enter first name"
+    },
+    "lastName": {
+      "label": "Last Name",
+      "placeholder": "Enter last name"
+    },
+    "email": {
+      "label": "Email Address",
+      "placeholder": "Enter email address"
+    },
+    "phone": {
+      "label": "Phone",
+      "placeholder": "Enter phone"
+    },
+    "nationalId": {
+      "label": "National Id",
+      "placeholder": "Enter national id"
+    },
+    "employeeCode": {
+      "label": "Employee Code",
+      "placeholder": "Enter employee code"
+    },
+    "profilePhoto": {
+      "label": "Profile Photo",
+      "placeholder": "Enter employee code"
+    },
+    "dealerId": {
+      "label": "Dealer Id",
+      "placeholder": "Enter Dealer Id"
+    },
+    "confirmPassword": {
+      "label": "Confirm Password",
+      "placeholder": "Enter confirm password"
+    },
+    "address": {
+      "label": "Address",
+      "placeholder": "Enter address"
+    },
+    "password": {
+      "label": "Password",
+      "placeholder": "Enter password"
+    },
+    "role": {
+      "label": "Role",
+      "placeholder": "Select role"
+    },
+    "client": {
+      "label": "Client",
+      "placeholder": "Select client"
+    },
+    "status": {
+      "label": "Status"
+    },
+    "otp": {
+      "label": "Authentication Code",
+      "text": "Enter the code from your authenticator app"
+    }
+  },
+  "buttons": {
+    "polygon": "Polygon",
+    "edit": "Edit",
+    "delete": "Delete",
+    "deleting": "Deleting...",
+    "cancel": "Cancel",
+    "save": "Save",
+    "saving": "Saving...",
+    "activate": "Activate",
+    "deactivate": "Deactivate",
+    "backLogin": "Back to login",
+    "back": "Back",
+    "activated": "Activated",
+    "deactivated": "Deactivated",
+    "processing": "Processing...",
+    "filter": "Filter",
+    "clear": "Clear",
+    "next": "Next",
+    "view": "View",
+    "permissions": "Permissions"
+  },
+  "dialog": {
+    "deleteDescription": "Are you sure you want to delete",
+    "deactivate": "Deactivate User",
+    "activate": "Activate User",
+    "confirmStatusChange": "Are you sure you want to {{action}} {{name}}?"
+  },
+  "validation": {
+    "nameRequired": "Name is required",
+    "roleRequired": "Role is required",
+    "passwordRequired": "Password is required",
+    "emailRequired": "Email is required",
+    "invalidEmail": "Please enter a valid email address",
+    "addressRequired": "Address is required",
+    "arabicLettersNotAllowed": "Arabic letters are not allowed",
+    "englishLettersNotAllowed": "English letters are not allowed",
+    "coordinatesRequired": "Coordinates are required",
+    "areaRequired": "Area is required",
+    "regionRequired": "Region is required",
+    "subRegionRequired": "Subregion is required",
+    "mallRequired": "Mall is required",
+    "codeRequired": "Code is required",
+    "shiftRequired": "Shift is required",
+    "dayRequired": "Day is required",
+    "phoneRequired": "Phone is required",
+    "nationalIdRequired": "National id is required",
+    "employeeCodeRequired": "Employee code is required",
+    "dealerIdRequired": "Dealer id is required",
+    "startTimeRequired": "Start time is required",
+    "endTimeRequired": "End time is required",
+    "invalidTime": "Invalid time format",
+    "endAfterStart": "End time must be after start time",
+    "invalidURL": "Invalid URL"
+  },
+  "filters": {
+    "status": "Status"
+  },
+  "entities": {
+    "area": "Area",
+    "regions": "Regions",
+    "region": "Region",
+    "subregion": "Subregion"
+  },
+  "areas": {
+    "title": "Areas",
+    "activeAreas": "{{count}} area",
+    "activeAreas_plural": "{{count}} areas",
+    "create": "Create Area",
+    "update": "Update Area",
+    "searchPlaceholder": "Search by area name or area code",
+    "deleteTitle": "Delete Area",
+    "areaSuccessDeleted": "Area deleted successfully",
+    "successUpdated": "Area updated successfully",
+    "successCreate": "Area created successfully",
+    "createDescription": "Create a new area with name(en, ar), code and poylogon",
+    "updateDescription": "Update an existing area with name(en, ar), code and poylogon"
+  },
+  "regions": {
+    "title": "Regions",
+    "activeRegions": "{{count}} region",
+    "activeRegions_plural": "{{count}} regions",
+    "create": "Create Region",
+    "update": "Update Region",
+    "searchPlaceholder": "Search by region name or region code",
+    "deleteTitle": "Delete Region",
+    "regionSuccessDeleted": "Region deleted successfully",
+    "successUpdated": "Region updated successfully",
+    "successCreate": "Region created successfully",
+    "selectArea": "Select area...",
+    "noAreaTitle": "No {{entity}} Selected",
+    "noAreaDescription": "Please select a {{entity}} from the list to view {{parent}}.",
+    "createDescription": "Create a new region with name (en, ar), code, and polygon based on the selected area",
+    "updateDescription": "Update an existing region with name (en, ar), code, and polygon based on the selected area"
+  },
+  "subregions": {
+    "title": "Subregions",
+    "activeSubregions": "{{count}} subregion",
+    "activeSubregions_plural": "{{count}} subregions",
+    "create": "Create Subregion",
+    "update": "Update Subregion",
+    "searchPlaceholder": "Search by subregion name or subregion code",
+    "deleteTitle": "Delete Subregion",
+    "subregionSuccessDeleted": "Subregion deleted successfully",
+    "successUpdated": "Subregion updated successfully",
+    "successCreate": "Subregion created successfully",
+    "selectRegion": "Select region...",
+    "createDescription": "Create a new sub-region with name (en, ar), code, and polygon based on the selected region",
+    "updateDescription": "Update an existing sub-region with name (en, ar), code, and polygon based on the selected region"
+  },
+  "malls": {
+    "title": "Malls",
+    "activeMalls": "{{count}} malls",
+    "activeMalls_plural": "{{count}} malls",
+    "create": "Create Mall",
+    "update": "Update Mall",
+    "searchPlaceholder": "Search by mall name or mall code",
+    "deleteTitle": "Delete Mall",
+    "mallsSuccessDeleted": "Mall deleted successfully",
+    "successUpdated": "Mall updated successfully",
+    "successCreate": "Mall created successfully",
+    "selectSubregion": "Select subregion...",
+    "createDescription": "Create a new mall with name (en, ar), code, and polygon based on the selected sub-region",
+    "updateDescription": "Update an existing mall with name (en, ar), code, and polygon based on the selected sub-region",
+    "mallAdress": "Mall Address"
+  },
+  "booths": {
+    "title": "Booths",
+    "activeBooths": "{{count}} active booths",
+    "activeBooths_plural": "{{count}} active booths",
+    "create": "Create Booth",
+    "update": "Update Booth",
+    "searchPlaceholder": "Search by booth name or booth code",
+    "deleteTitle": "Delete Booth",
+    "SuccessDeleted": "Booth deleted successfully",
+    "successUpdated": "Booth updated successfully",
+    "successCreate": "Booth created successfully",
+    "selectMall": "Select Mall...",
+    "createDescription": "Create a new booth with name, code, and mall",
+    "updateDescription": "Update an existing booth with name, code, and mall"
+  },
+  "shifts": {
+    "title": "Shifts",
+    "activeShifts": "{{count}} shifts",
+    "activeShifts_plural": "{{count}} shifts",
+    "create": "Create Shift",
+    "update": "Update Shift",
+    "searchPlaceholder": "Search by mall name or mall code",
+    "deleteTitle": "Delete Shift",
+    "SuccessDeleted": "Shift deleted successfully",
+    "successUpdated": "Shift updated successfully",
+    "successCreate": "Shift created successfully",
+    "createDescription": "Create a new shift with day, start time, and end time",
+    "updateDescription": "Update an existing shift with day, start time, and end time"
+  },
+  "users": {
+    "title": "Dashboard Users",
+    "activeUsers": "{{count}} users",
+    "activeUsers_plural": "{{count}} users",
+    "create": "Create Dashboard User",
+    "update": "Update Dashboard User",
+    "searchPlaceholder": "Search by name or email",
+    "deleteTitle": "Delete User",
+    "SuccessDeleted": "User deleted successfully",
+    "successUpdated": "User updated successfully",
+    "successCreate": "User created successfully",
+    "createDescription": "Create a new user with first name, last name, role, email, password and assign to client",
+    "updateDescription": "Update an existing user with first name, last name, role, email, password and assign to client",
+    "baseInfo": "Base Info",
+    "personalInfo": "Personal Info",
+    "accountSecurity": "Account Security",
+    "mobile": {
+      "title": "Mobile Users",
+      "create": "Create Mobile User",
+      "update": "Update Mobile User"
+    }
+  },
+  "vendors": {
+    "title": "Vendors",
+    "create": "Create Vendor",
+    "activeVendors": "{{count}} vendors",
+    "activeVendors_plural": "{{count}} vendors",
+    "searchPlaceholder": "Search by name",
+    "vendorDetails": "Vendor Details",
+    "createDescription": "Create a new vendor with name (En), name (AR), email and phone"
+  },
+  "common": {
+    "searchAreaPlaceholder": "Search by area name",
+    "selectAreaTitle": "Select Area",
+    "selectAreaDescription": "Choose the area in which the anticipated regions are situated.",
+    "searchRegionPlaceholder": "Search by region name",
+    "selectRegionTitle": "Select Region",
+    "selectRegionDescription": "Choose the region in which the anticipated sub-regions are situated.",
+    "searchSubRegionPlaceholder": "Search by subregion name",
+    "selectSubRegionTitle": "Select SubRegion",
+    "selectSubRegionDescription": "Choose the sub-region in which the anticipated malls are situated.",
+    "selectMallTitle": "Select Mall",
+    "selectMallDescription": "Choose the mall in which the anticipated booths are situated.",
+    "searchMallPlaceholder": "Search by mall name"
+  }
+}
