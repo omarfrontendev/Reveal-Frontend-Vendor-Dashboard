@@ -20,7 +20,7 @@ export const getShiftSchema = (id) => {
                 .string()
                 .min(1, "endTimeRequired")
                 .regex(timeRegex, "invalidTime"),
-            clientId: z.any()
+            vendorId: z.any()
         }).refine(
             (data) => data.endTime > data.startTime,
             {
@@ -46,7 +46,7 @@ export const getShiftSchema = (id) => {
             .string()
             .min(1, "endTimeRequired")
             .regex(timeRegex, "invalidTime"),
-        clientId: z.any()
+        vendorId: z.any()
     }).refine(
         (data) => data.endTime > data.startTime,
         {

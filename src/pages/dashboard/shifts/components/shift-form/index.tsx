@@ -16,7 +16,7 @@ import { useTranslation } from "react-i18next";
 export default function ShiftForm({ id }: { id?: string }) {
     const navigate = useNavigate();
     const { t } = useTranslation();
-    const { clientId } = useSelector((state: any) => state.auth);
+    const { vendorId } = useSelector((state: any) => state.auth);
 
     // get shift data if id is provided
     const { shift } = useSingleShift(id);
@@ -27,7 +27,7 @@ export default function ShiftForm({ id }: { id?: string }) {
     const form = useForm({
         resolver: zodResolver(getShiftSchema(id)),
         defaultValues: {
-            clientId: clientId,
+            vendorId: vendorId,
         },
         mode: "all"
     });

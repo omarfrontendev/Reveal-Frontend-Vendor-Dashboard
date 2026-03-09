@@ -18,7 +18,7 @@ import { useTranslation } from "react-i18next";
 export default function BoothForm({ id }: { id?: string }) {
 
     const navigate = useNavigate();
-    const { clientId } = useSelector((state: any) => state.auth);
+    const { vendorId } = useSelector((state: any) => state.auth);
     const { t } = useTranslation();
     // get sub-region data if id is provided
     const { booth } = useSinglesBooth(id);
@@ -37,7 +37,7 @@ export default function BoothForm({ id }: { id?: string }) {
     const form = useForm({
         resolver: zodResolver(getBoothSchema()),
         defaultValues: {
-            clientId,
+            vendorId,
         },
         mode: "all"
     });
@@ -49,7 +49,7 @@ export default function BoothForm({ id }: { id?: string }) {
             form.reset({
                 name: booth.name,
                 mallId: booth.mallId,
-                clientId: booth.clientId,
+                vendorId: booth.vendorId,
                 code: booth.code,
                 cameraConfig: {
                 rtspUrl: booth?.cameraConfig.rtspUrl,

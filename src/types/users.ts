@@ -7,7 +7,7 @@ export interface User {
   email: string;
   role: string;
   isActive: boolean;
-  clientId: number;
+  vendorId: number;
   nationalId: string | null;
   phone: string | null
   dealerId?: string | null
@@ -40,6 +40,6 @@ export interface CreateUserPayload {
   firstName: string;
   lastName: string;
   role: UserRole;
-  clientId: number;
+  vendorId: number;
 }
 

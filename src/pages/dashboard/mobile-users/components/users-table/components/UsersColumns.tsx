@@ -1,4 +1,3 @@
-import { Badge } from "@/components/ui/badge";
 import { UserActionsCell } from "./UserActionCell";
 import { Button } from "@/components/ui/button";
 import { useTranslation } from "react-i18next";
@@ -73,7 +72,7 @@ export const useUsersColumns = (setRefreshData: any, setStatusDialog: any) => {
 
         return (
           <div className="flex justify-center">
-            <Badge
+            {/* <Badge
               variant={isActive ? "activate" : "deactivate"}
               asChild
             >
@@ -82,7 +81,13 @@ export const useUsersColumns = (setRefreshData: any, setStatusDialog: any) => {
                 className="cursor-pointer p-4">
                 {isActive ? t("buttons.activated") : t("buttons.deactivated")}
               </Button>
-            </Badge>
+            </Badge> */}
+            <Button
+              variant={isActive ? "activate" : "deactivate"}
+              onClick={() => setStatusDialog(row.original)}
+              className="cursor-pointer p-4">
+              {isActive ? t("buttons.activated") : t("buttons.deactivated")}
+            </Button>
           </div>
         )
       },

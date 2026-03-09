@@ -12,7 +12,7 @@ export const getBoothSchema = () => {
             .nonempty({ message: 'codeRequired' }),
         mallId: z
             .number({ message: "mallRequired" }),
-        clientId: z
+        vendorId: z
             .number(),
         shiftIds: z
             .array(z.number({ message: "shiftRequired" }), { message: "shiftRequired" })

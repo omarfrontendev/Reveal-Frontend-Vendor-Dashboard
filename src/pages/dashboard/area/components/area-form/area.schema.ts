@@ -17,7 +17,7 @@ export const getAreaSchema = () => {
         message: 'englishLettersNotAllowed',
       }),
     areaCode: z.string().trim(),
-    clientId: z.any(),
+    vendorId: z.any(),
     coords: z
       .array(
         z.object({

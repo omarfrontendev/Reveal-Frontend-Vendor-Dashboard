@@ -16,11 +16,11 @@ const auth = {
 };
 
 const area = {
-    getAreas: "/vendors/areas",
-    createArea: "/vendors/areas",
-    getAreaById: (id: string) => `/vendors/areas/${id}`,
-    updateArea: (id: string) => `/vendors/areas/${id}`,
-    deleteArea: (id: string) => `/vendors/areas/${id}`,
+    getAreas: "/vendors/area",
+    createArea: "/vendors/area",
+    getAreaById: (id: string) => `/vendors/area/${id}`,
+    updateArea: (id: string) => `/vendors/area/${id}`,
+    deleteArea: (id: string) => `/vendors/area/${id}`,
 };
 
 const regions = {

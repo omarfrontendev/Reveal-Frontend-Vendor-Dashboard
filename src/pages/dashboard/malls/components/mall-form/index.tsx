@@ -17,7 +17,7 @@ import { useTranslation } from "react-i18next";
 export default function MallForm({ id }: { id?: string }) {
 
     const [selectedCoords, setSelectedCoords] = useState<any[]>([]);
-    const { clientId } = useSelector((state: any) => state.auth);
+    const { vendorId } = useSelector((state: any) => state.auth);
     const navigate = useNavigate();
     const { t } = useTranslation();
 
@@ -34,7 +34,7 @@ export default function MallForm({ id }: { id?: string }) {
         resolver: zodResolver(getMallSchema()),
         defaultValues: {
             coords: [],
-            clientId
+            vendorId
         },
         mode: "all"
     });

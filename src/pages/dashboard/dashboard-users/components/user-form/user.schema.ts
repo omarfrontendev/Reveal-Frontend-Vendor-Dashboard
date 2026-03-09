@@ -27,7 +27,7 @@ export const getUserSchema = (id: any) => {
             .string()
             .trim()
             .nonempty({ message: 'dealerIdRequired' }),
-        clientId: z
+        vendorId: z
             .number(),
     });
 
@@ -65,6 +65,6 @@ export const getUserSchema = (id: any) => {
                 .string()
                 .nonempty({ message: 'dealerIdRequired' }),
 
-            clientId: z.number(),
+            vendorId: z.number(),
         })
 };

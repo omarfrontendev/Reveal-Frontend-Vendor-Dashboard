@@ -20,7 +20,7 @@ export const getMallSchema = () => {
             .string().trim(),
         code: z
             .string().trim(),
-        clientId: z
+        vendorId: z
             .any(),
         subRegionId: z
             .number({ message: "subRegionRequired" }),

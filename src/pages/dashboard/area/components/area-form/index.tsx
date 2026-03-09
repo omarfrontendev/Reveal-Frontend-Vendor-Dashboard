@@ -18,7 +18,7 @@ export default function AreaForm({ id }: { id?: string }) {
     const navigate = useNavigate();
     const { t } = useTranslation();
     
-    const { clientId } = useSelector((state: any) => state.auth);
+    const { vendorId } = useSelector((state: any) => state.auth);
     // get area data if id is provided
     const { area } = useSingleArea(id);
 
@@ -28,7 +28,7 @@ export default function AreaForm({ id }: { id?: string }) {
     const form = useForm({
         resolver: zodResolver(getAreaSchema()),
         defaultValues: {
-            clientId,
+            vendorId,
             coords: []
         },
         mode: "all"

@@ -6,7 +6,7 @@ interface User {
   id: string;
   name: string;
   role: string;
-  clientId: number
+  vendorId: number
 }
 
 interface AuthState {
@@ -14,7 +14,7 @@ interface AuthState {
   token: string | null;
   loading: boolean;
   error: string | null;
-  clientId: number
+  vendorId: number
 }
 
 const storedUser = localStorage.getItem("user");
@@ -25,7 +25,7 @@ const initialState: AuthState = {
   token: localStorage.getItem("authToken"),
   loading: false,
   error: null,
-  clientId: parsedUser?.clientId ?? null,
+  vendorId: parsedUser?.vendorId ?? null,
 };
 
 export const authSlice = createSlice({
@@ -44,7 +44,7 @@ export const authSlice = createSlice({
       }>) => {
         state.loading = false;
         state.user = action.payload?.data?.user;
-        state.clientId = action.payload?.data?.user?.clientId;
+        state.vendorId = action.payload?.data?.user?.vendorId;
         state.token = action.payload?.data?.access_token;
         state.error = null;
       })

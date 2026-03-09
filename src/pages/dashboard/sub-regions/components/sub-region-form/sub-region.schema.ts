@@ -19,7 +19,7 @@ export const getSubRegionSchema = () => {
         code: z
             .string().trim(),
         // .nonempty({ message: 'CODE_REQUIRED' }),
-        clientId: z
+        vendorId: z
             .any(),
         regionId: z
             .number({ message: "regionRequired" }),

@@ -18,7 +18,7 @@ export default function RegionForm({ id }: { id?: string }) {
 
     const navigate = useNavigate();
     const [selectedCoords, setSelectedCoords] = useState<any[]>([]);
-    const { clientId } = useSelector((state: any) => state.auth);
+    const { vendorId } = useSelector((state: any) => state.auth);
     const { t } = useTranslation();
 
     // get area data if id is provided
@@ -33,7 +33,7 @@ export default function RegionForm({ id }: { id?: string }) {
     const form = useForm({
         resolver: zodResolver(getRegionSchema()),
         defaultValues: {
-            clientId,
+            vendorId,
             coords: []
         },
         mode: "all"

@@ -73,16 +73,12 @@ export const useUsersColumns = (setRefreshData: any, setStatusDialog: any) => {
 
         return (
           <div className="flex justify-center">
-            {/* <Badge
-              asChild
-              > */}
             <Button
               variant={isActive ? "activate" : "deactivate"}
               onClick={() => setStatusDialog(row.original)}
               className="cursor-pointer p-4">
               {isActive ? t("buttons.activated") : t("buttons.deactivated")}
             </Button>
-            {/* </Badge> */}
           </div>
         )
       },

@@ -19,7 +19,7 @@ export const getRegionSchema = () => {
         regionCode: z
             .string()
             .trim(),
-        clientId: z
+        vendorId: z
             .any(),
         areaId: z
             .number({ message: "areaRequired" }),

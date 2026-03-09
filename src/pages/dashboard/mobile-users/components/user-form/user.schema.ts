@@ -37,7 +37,7 @@ export const getUserSchema = (id: any) => {
         profilePhotoUrl: z
             .string()
             .nonempty({ message: 'dealerIdRequired' }),
-        clientId: z
+        vendorId: z
             .number(),
     });
 
@@ -78,6 +78,6 @@ export const getUserSchema = (id: any) => {
                 .string()
                 .nonempty({ message: 'dealerIdRequired' }),
 
-            clientId: z.number(),
+            vendorId: z.number(),
         })
 };

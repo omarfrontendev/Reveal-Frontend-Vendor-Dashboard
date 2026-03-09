@@ -18,7 +18,7 @@ export default function UserForm({ id }: { id?: string }) {
     const navigate = useNavigate();
     const { t } = useTranslation();
 
-    const { clientId } = useSelector((state: any) => state.auth);
+    const { vendorId } = useSelector((state: any) => state.auth);
 
     // get user data if id is provided
     const { user } = useSingleUser(id);
@@ -29,7 +29,7 @@ export default function UserForm({ id }: { id?: string }) {
     const form = useForm({
         resolver: zodResolver(getUserSchema(id)),
         defaultValues: {
-            clientId,
+            vendorId,
             profilePhotoUrl: "https://example.com/profile.jpg",
         },
         mode: "all"

@@ -20,7 +20,7 @@ export default function SubRegionForm({ id }: { id?: string }) {
     const { t } = useTranslation();
     const [selectedCoords, setSelectedCoords] = useState<any[]>([]);
 
-    const { clientId } = useSelector((state: any) => state.auth);
+    const { vendorId } = useSelector((state: any) => state.auth);
 
     // get sub-region data if id is provided
     const { subRegion } = useSinglesSubRegion(id);
@@ -34,7 +34,7 @@ export default function SubRegionForm({ id }: { id?: string }) {
     const form = useForm({
         resolver: zodResolver(getSubRegionSchema()),
         defaultValues: {
-            clientId,
+            vendorId,
             coords: []
         },
         mode: "all"

@@ -8,7 +8,7 @@ export interface CreateBoothDto {
   name: string;
   code: string;
   mallId: number;
-  clientId: number;
+  vendorId: number;
   cameraConfig: CameraConfig;
   shiftIds: number[];
   shifts?: []
