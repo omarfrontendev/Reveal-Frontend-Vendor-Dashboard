@@ -1,4 +1,4 @@
-export const userFields = (roles: any[]) => {
+export const userFields = (roles: any[], permissionsProfiles: any[], isLoading: boolean) => {
 
     return [
         {
@@ -60,6 +60,16 @@ export const userFields = (roles: any[]) => {
             type: "select",
             required: false,
             list: roles
+        },
+        {
+            name: "profileId",
+            label: "profilePermission.label",
+            placeholder: "role.profilePermission",
+            colSpan: "col-span-6",
+            type: "select",
+            required: true,
+            list: permissionsProfiles,
+            isLoading
         },
     ];
 }

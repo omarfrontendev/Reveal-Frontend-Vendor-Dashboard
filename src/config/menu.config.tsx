@@ -9,7 +9,6 @@ import {
     LayoutDashboard,
     UserCog,
     Key,
-    UserLockIcon,
 } from 'lucide-react';
 // import Overview from '@/pages/dashboard/Overview';
 import { LoginPage } from '@/pages/auth/LoginPage';
@@ -119,7 +118,7 @@ export const modules: ModuleSection[] = [
             {
                 id: "users",
                 icon: UsersIcon,
-                label: "sidebar.users",
+                label: "sidebar.hrModules",
                 children: [
                     {
                         icon: LayoutDashboard,
@@ -133,34 +132,27 @@ export const modules: ModuleSection[] = [
                         path: '/mobile-users',
                         element: <ViewMobileUsers />,
                     },
-                ]
-            },
-            // {
-            //     id: "vendors",
-            //     icon: UsersIcon,
-            //     label: "sidebar.vendors",
-            //     children: [
-            //         {
-            //             icon: LayoutDashboard,
-            //             label: 'sidebar.view',
-            //             path: '/vendors-users',
-            //             element: <VendorsView />,
-            //         },
-            //     ]
-            // },
-            {
-                id: "roles",
-                icon: Key,
-                label: "sidebar.roles",
-                children: [
                     {
-                        icon: UserLockIcon,
-                        label: 'sidebar.view',
+                        icon: Key,
+                        label: 'sidebar.profilePermissions',
                         path: '/roles',
                         element: <ViewPermissions />,
                     },
                 ]
             },
+            // {
+            //     id: "roles",
+            //     icon: Key,
+            //     label: "sidebar.roles",
+            //     children: [
+            //         {
+            //             icon: UserLockIcon,
+            //             label: 'sidebar.view',
+            //             path: '/roles',
+            //             element: <ViewPermissions />,
+            //         },
+            //     ]
+            // },
         ],
     },
 ];

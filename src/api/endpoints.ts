@@ -73,6 +73,7 @@ const clients = {
 
 const permissions = {
     getPermissions: "/vendors/permissions",
+    availablePermissions: "/vendors/permissions/available",
     createPermission: "/vendors/permissions",
     updatePermission: (id: string) => `/vendors/permissions/profile/${id}`,
     deletePermission: (id: string) => `/vendors/permissions/profile/${id}`,

@@ -29,6 +29,15 @@ export const getUserSchema = (id: any) => {
             .nonempty({ message: 'dealerIdRequired' }),
         vendorId: z
             .number(),
+        profileId: z.number().nullable().optional(),
+    }).superRefine((data, ctx) => {
+        if (data.role === "ClientAdmin" && !data.profileId) {
+            ctx.addIssue({
+                path: ["profileId"],
+                code: z.ZodIssueCode.custom,
+                message: "profileIdRequired",
+            });
+        }
     });
 
     return z
@@ -66,5 +75,14 @@ export const getUserSchema = (id: any) => {
                 .nonempty({ message: 'dealerIdRequired' }),
 
             vendorId: z.number(),
-        })
+            profileId: z.number().nullable().optional(),
+        }).superRefine((data, ctx) => {
+            if (data.role === "ClientAdmin" && !data.profileId) {
+                ctx.addIssue({
+                    path: ["profileId"],
+                    code: z.ZodIssueCode.custom,
+                    message: "profileIdRequired",
+                });
+            }
+        });
 };

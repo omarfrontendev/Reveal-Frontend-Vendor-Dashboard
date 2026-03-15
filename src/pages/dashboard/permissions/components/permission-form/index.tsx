@@ -7,17 +7,19 @@ import FormField from "@/components/ui/FormField";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { PermissionFields } from "./permission.elemets";
-import { modules, ModulesOptions } from "@/constants/modules";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { useUpsertPermission } from "@/hooks/permissions/useUpsertPermission";
 import { useSingleRole } from "@/hooks/permissions/useSingleRole";
 import { useEffect } from "react";
+import { useAvailablePermissions } from "@/hooks/permissions/usePermissions";
 
 export default function PermissionForm({ id }: { id?: string }) {
 
     const navigate = useNavigate();
-    const { t } = useTranslation();
+    const { t, i18n: { language } } = useTranslation();
+
+    const { availablePermissions } = useAvailablePermissions();
 
     // create permission mutation
     const { mutate: savePermission, isPending } = useUpsertPermission({ id });
@@ -78,16 +80,10 @@ export default function PermissionForm({ id }: { id?: string }) {
                         <div className="flex items-center gap-2 mb-4">
                             <Checkbox
                                 id="select-all-modules"
-                                checked={modules.every((module) =>
-                                    ModulesOptions.every((item) =>
-                                        permissionKeys.includes(`${module}.${item}`)
-                                    )
-                                )}
+                                checked={availablePermissions.every((permission: any) => permission?.methods.every(({ key }) => permissionKeys.includes(key)))}
                                 onCheckedChange={(checked) => {
                                     if (checked) {
-                                        const allPermissions = modules.flatMap((module) =>
-                                            ModulesOptions.map((item) => `${module}.${item}`)
-                                        );
+                                        const allPermissions = availablePermissions.flatMap(({ methods }) => methods.map(({ key }) => `${key}`));
 
                                         form.setValue("permissionKeys", allPermissions);
                                     } else {
@@ -101,10 +97,8 @@ export default function PermissionForm({ id }: { id?: string }) {
                             </Label>
                         </div>
                         <div className="grid grid-cols-12 gap-4 border rounded-xl p-5 bg-slate-50">
-                            {modules.map((module) => {
-                                const modulePermissions = ModulesOptions.map(
-                                    (item) => `${module}.${item}`
-                                );
+                            {availablePermissions.map(({ module, methods }: any) => {
+                                const modulePermissions = methods.map((item) => item?.key);
 
                                 const isAllSelected = modulePermissions.every((p) =>
                                     permissionKeys.includes(p)
@@ -137,19 +131,19 @@ export default function PermissionForm({ id }: { id?: string }) {
                                                 />
                                                 <Label
                                                     htmlFor={`${module}-select-all`}
-                                                    className="text-xs text-slate-500"
+                                                    className="cursor-pointer text-xs text-slate-500"
                                                 >
                                                     All
                                                 </Label>
                                             </div>
                                         </h3>
 
-                                        <div className="flex items-center gap-4 flex-wrap">
-                                            {ModulesOptions.map((item) => {
-                                                const key = `${module}.${item}`;
+                                        <div className="grid grid-cols-12 items-center gap-4 flex-wrap">
+                                            {methods?.map((item) => {
+                                                const key = item.key;
 
                                                 return (
-                                                    <div key={key} className="flex items-center gap-2">
+                                                    <div key={key} className="col-span-6 flex items-center gap-2">
                                                         <Checkbox
                                                             id={key}
                                                             checked={permissionKeys.includes(key)}
@@ -169,7 +163,7 @@ export default function PermissionForm({ id }: { id?: string }) {
                                                             htmlFor={key}
                                                             className="cursor-pointer text-sm text-slate-600"
                                                         >
-                                                            {item.toUpperCase()}
+                                                            {`${item?.[`name${language === "en" ? "En" : "Ar"}`]}`}
                                                         </Label>
                                                     </div>
                                                 );

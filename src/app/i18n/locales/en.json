@@ -53,7 +53,9 @@
     "mobileUsers": "Mobile Users",
     "vendors": "Vendors",
     "view": "View",
-    "roles": "Roles"
+    "roles": "Roles",
+    "profilePermissions": "Profile Permissions",
+    "hrModules": "HR Module"
   },
   "header": {
     "title": "Reveal Provider Console",
