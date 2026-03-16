@@ -2,6 +2,7 @@
 import { api } from '@/api';
 import { endpoints } from '@/api/endpoints';
 import type { AreaBody } from '@/types/area';
+import { useSelector } from 'react-redux';
 import useSWR from 'swr';
 
 interface ApiResponse<T> {
@@ -16,7 +17,9 @@ const fetcher = async <T>(url: string): Promise<T> => {
 };
 
 export const useAreas = () => {
-    const { data, error, isLoading, mutate } = useSWR<AreaBody[]>(`${endpoints.area.getAreas}?page=1&limit=100`, fetcher);
+
+    const { vendorId } = useSelector((state: any) => state.auth);
+    const { data, error, isLoading, mutate } = useSWR<AreaBody[]>(`${endpoints.area.getAreas}?page=1&limit=100&vendorId=${vendorId}`, fetcher);
 
     return {
         areas: data || [],

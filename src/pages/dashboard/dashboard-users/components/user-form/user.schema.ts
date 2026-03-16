@@ -16,8 +16,8 @@ export const getUserSchema = (id: any) => {
             .nonempty({ message: 'roleRequired' }),
         phone: z
             .string()
-            .trim()
-            .nonempty({ message: 'phoneRequired' }),
+            .trim(),
+            // .nonempty({ message: 'phoneRequired' }),
 
         nationalId: z
             .string()
@@ -31,7 +31,7 @@ export const getUserSchema = (id: any) => {
             .number(),
         profileId: z.number().nullable().optional(),
     }).superRefine((data, ctx) => {
-        if (data.role === "ClientAdmin" && !data.profileId) {
+        if (data.role === "VendorAdmin" && !data.profileId) {
             ctx.addIssue({
                 path: ["profileId"],
                 code: z.ZodIssueCode.custom,
@@ -63,8 +63,8 @@ export const getUserSchema = (id: any) => {
 
             phone: z
                 .string()
-                .trim()
-                .nonempty({ message: 'phoneRequired' }),
+                .trim(),
+                // .nonempty({ message: 'phoneRequired' }),
 
             nationalId: z
                 .string()
@@ -77,7 +77,7 @@ export const getUserSchema = (id: any) => {
             vendorId: z.number(),
             profileId: z.number().nullable().optional(),
         }).superRefine((data, ctx) => {
-            if (data.role === "ClientAdmin" && !data.profileId) {
+            if (data.role === "VendorAdmin" && !data.profileId) {
                 ctx.addIssue({
                     path: ["profileId"],
                     code: z.ZodIssueCode.custom,

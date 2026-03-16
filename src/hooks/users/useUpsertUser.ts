@@ -21,8 +21,19 @@ export const useUpsertUser = ({ id }: Params = {}) => {
         : endpoints.users.createUsers;
 
       const method = isEdit ? 'patch' : 'post';
+      const profileId = body?.profileId;
+
+      delete body.profileId;
 
       const { data } = await api[method]<CreateShiftResponse>(url, body);
+
+      if (profileId) {
+        await api.post('/vendors/permissions/assign', {
+          profileId,
+          userId: data?.data.id
+        })
+      }
+
       return data;
     },
 

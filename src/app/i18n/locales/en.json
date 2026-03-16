@@ -181,6 +181,9 @@
     "otp": {
       "label": "Authentication Code",
       "text": "Enter the code from your authenticator app"
+    },
+    "profilePermission": {
+      "label": "Profile Permissions"
     }
   },
   "buttons": {
@@ -208,7 +211,8 @@
     "deleteDescription": "Are you sure you want to delete",
     "deactivate": "Deactivate User",
     "activate": "Activate User",
-    "confirmStatusChange": "Are you sure you want to {{action}} {{name}}?"
+    "confirmStatusChange": "Are you sure you want to {{action}} {{name}}?",
+    "permissions": "Permissions"
   },
   "validation": {
     "nameRequired": "Name is required",
@@ -235,7 +239,8 @@
     "endTimeRequired": "End time is required",
     "invalidTime": "Invalid time format",
     "endAfterStart": "End time must be after start time",
-    "invalidURL": "Invalid URL"
+    "invalidURL": "Invalid URL",
+    "profileIdRequired": "profile Permissions Required"
   },
   "filters": {
     "status": "Status"

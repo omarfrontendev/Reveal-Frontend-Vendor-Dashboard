@@ -20,6 +20,7 @@ export default function ViewRegions() {
           {t("regions.create")}
         </Button>
       </PageHeader>
+      
       <RegionsTable />
     </div>
   );

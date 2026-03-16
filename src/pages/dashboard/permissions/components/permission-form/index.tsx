@@ -13,6 +13,7 @@ import { useUpsertPermission } from "@/hooks/permissions/useUpsertPermission";
 import { useSingleRole } from "@/hooks/permissions/useSingleRole";
 import { useEffect } from "react";
 import { useAvailablePermissions } from "@/hooks/permissions/usePermissions";
+import { toast } from "sonner";
 
 export default function PermissionForm({ id }: { id?: string }) {
 
@@ -40,6 +41,12 @@ export default function PermissionForm({ id }: { id?: string }) {
             });
         }
     }, [role, form]);
+
+    useEffect(() => {
+        if (form?.formState?.errors?.permissionKeys?.message) {
+            toast.error(form?.formState?.errors?.permissionKeys?.message)
+        }
+    }, [form?.formState?.errors?.permissionKeys?.message])
 
     const onSubmit = (data: any) => {
         savePermission(data, {

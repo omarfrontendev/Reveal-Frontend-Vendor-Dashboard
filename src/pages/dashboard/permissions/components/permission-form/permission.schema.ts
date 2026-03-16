@@ -17,6 +17,8 @@ export const getPermissionSchema = () => {
                 .refine((val) => !/[A-Za-z]/.test(val), {
                     message: 'englishLettersNotAllowed',
                 }),
-            permissionKeys: z.array(z.string())
+            permissionKeys: z
+                .array(z.string(), { message: "You need to select at least one permission" })
+                .min(1, { message: "You need to select at least one permission" })
         })
 };

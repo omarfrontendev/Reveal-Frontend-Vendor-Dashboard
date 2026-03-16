@@ -26,7 +26,6 @@ export default function RegionsTable() {
         onClearSearch();
     }, [onClearSearch]);
 
-
     return (
         <MainTable
             errorMsg={errorMsg}
