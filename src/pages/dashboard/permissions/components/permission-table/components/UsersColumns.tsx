@@ -23,16 +23,16 @@ export const useUsersColumns = (setRefreshData: any) => {
         skeleton: <div className="h-5 w-full bg-muted rounded" />,
       },
     },
-    {
-      id: 'assignedCount',
-      header: () => t("fields.assignedCount"),
-      cell: ({ row }: any) => <div className="truncate block">{row.original.assignedCount || "0"}</div>,
-      enableSorting: false,
-      meta: {
-        headerClassName: '',
-        skeleton: <div className="h-5 w-full bg-muted rounded" />,
-      },
-    },
+    // {
+    //   id: 'assignedCount',
+    //   header: () => t("fields.assignedCount"),
+    //   cell: ({ row }: any) => <div className="truncate block">{row.original.assignedCount || "0"}</div>,
+    //   enableSorting: false,
+    //   meta: {
+    //     headerClassName: '',
+    //     skeleton: <div className="h-5 w-full bg-muted rounded" />,
+    //   },
+    // },
     {
       id: 'createdAt',
       header: () => t("fields.createdAt"),
