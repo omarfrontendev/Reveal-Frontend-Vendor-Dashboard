@@ -17,5 +17,21 @@ export const PermissionFields = () => {
             type: "text",
 
         },
+        {
+            name: "descriptionEn",
+            label: "descriptionEn.label",
+            placeholder: "descriptionEn.placeholder",
+            colSpan: "col-span-6",
+            required: false,
+            type: "textarea"
+        },
+        {
+            name: "descriptionAr",
+            label: "descriptionAr.label",
+            placeholder: "descriptionEn.placeholder",
+            colSpan: "col-span-6",
+            required: false,
+            type: "textarea"
+        },
     ];
 }

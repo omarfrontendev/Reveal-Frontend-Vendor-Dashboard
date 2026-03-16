@@ -37,6 +37,8 @@ export default function PermissionForm({ id }: { id?: string }) {
             form.reset({
                 nameEn: role.nameEn,
                 nameAr: role.nameAr,
+                descriptionEn: role.descriptionEn,
+                descriptionAr: role.descriptionAr,
                 permissionKeys: role.permissionKeys
             });
         }

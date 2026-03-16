@@ -104,6 +104,14 @@
       "label": "Name (Arabic)",
       "placeholder": "Enter name in Arabic"
     },
+    "descriptionEn": {
+      "label": "Description (English)",
+      "placeholder": "Enter description in English"
+    },
+    "descriptionAr": {
+      "label": "Description (Arabic)",
+      "placeholder": "Enter description in Arabic"
+    },
     "code": {
       "label": "Code",
       "placeholder": "Enter code"

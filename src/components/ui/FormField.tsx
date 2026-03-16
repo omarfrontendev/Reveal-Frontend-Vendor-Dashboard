@@ -7,12 +7,11 @@ import { useTranslation } from "react-i18next";
 import ProfilePhotoUpload from "./ProfilePhotoUpload";
 import { useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
+import { Textarea } from "./textarea";
 
 export default function FormField({ form, label, name, placeholder, colSpan, required, type, list, isLoading, selectedCoords, isMulti, ...props }: any) {
 
     const { t } = useTranslation();
-
-
 
     if (type === "spacer") {
         return <div className={colSpan} />;
@@ -99,27 +98,51 @@ export default function FormField({ form, label, name, placeholder, colSpan, req
             </Label>
 
             <div className="relative">
-                <Input
-                    {...props}
-                    {...form.register(name)}
-                    type={inputType}
-                    placeholder={t(`fields.${placeholder}`)}
-                    // autoComplete="new-password"
-                    className="
-            h-11
-            px-4
-            border-0
-            outline-none
-            ring-0
-            focus:border-0
-            focus:outline-none
-            focus:ring-0
-            focus-visible:outline-none
-            focus-visible:ring-0
-            placeholder:text-slate-500
-            pr-10
-          "
-                />
+                {type === "textarea" ? (
+                    <Textarea
+                        {...props}
+                        {...form.register(name)}
+                        type={inputType}
+                        placeholder={t(`fields.${placeholder}`)}
+                        // autoComplete="new-password"
+                        className="
+                        h-11
+                        px-4
+                        border-0
+                        outline-none
+                        ring-0
+                        focus:border-0
+                        focus:outline-none
+                        focus:ring-0
+                        focus-visible:outline-none
+                        focus-visible:ring-0
+                        placeholder:text-slate-500
+                        pr-10
+                    "
+                    />
+                ) :
+                    <Input
+                        {...props}
+                        {...form.register(name)}
+                        type={inputType}
+                        placeholder={t(`fields.${placeholder}`)}
+                        // autoComplete="new-password"
+                        className="
+                        h-11
+                        px-4
+                        border-0
+                        outline-none
+                        ring-0
+                        focus:border-0
+                        focus:outline-none
+                        focus:ring-0
+                        focus-visible:outline-none
+                        focus-visible:ring-0
+                        placeholder:text-slate-500
+                        pr-10
+                    "
+                    />
+                }
 
                 {type === "password" && (
                     <button
