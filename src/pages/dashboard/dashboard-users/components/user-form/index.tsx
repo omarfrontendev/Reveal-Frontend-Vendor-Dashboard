@@ -70,6 +70,7 @@ export default function UserForm({ id }: { id?: string }) {
                 role: user.role,
                 phone: user.phone,
                 nationalId: user.nationalId,
+                profileId: user.vendorPermissionProfiles[0]?.id,
             });
         }
     }, [user, form]);

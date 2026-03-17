@@ -1,6 +1,7 @@
 import type { UserRole } from "@/constants/userRoles";
 
 export interface User {
+  vendorPermissionProfiles?: any;
   id: number;
   firstName: string;
   lastName: string;
