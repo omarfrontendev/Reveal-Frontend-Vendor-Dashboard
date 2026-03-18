@@ -1,11 +1,11 @@
 
 const users = {
-    getAllUsers: "/users?page=1&limit=100",
-    getUsers: "/users",
-    createUsers: "/users",
-    getgetUserById: (id: string) => `/users/${id}`,
-    updateUser: (id: string) => `/users/${id}`,
-    deleteUser: (id: string) => `/users/${id}`,
+    getAllUsers: "/vendors/users?page=1&limit=100",
+    getUsers: "/vendors/users",
+    createUsers: "/vendors/users",
+    getgetUserById: (id: string) => `/vendors/users/${id}`,
+    updateUser: (id: string) => `/vendors/users/${id}`,
+    deleteUser: (id: string) => `/vendors/users/${id}`,
 };
 
 const auth = {
