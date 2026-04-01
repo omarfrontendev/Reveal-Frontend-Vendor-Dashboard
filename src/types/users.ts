@@ -13,6 +13,11 @@ export interface User {
   phone: string | null
   dealerId?: string | null
   employeeCode?: string | null
+  vendorBoothId?: number | null
+  vendorShiftId?: number | null
+  vendorAreaId?: number | null
+  vendorRegionId?: number | null
+  vendorSubRegionId?: number | null
 };
 
 export interface UsersTableOptions {

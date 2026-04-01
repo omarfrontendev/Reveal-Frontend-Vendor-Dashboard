@@ -63,7 +63,7 @@ export default function FormField({ form, label, name, placeholder, colSpan, req
                             value={
                                 isMulti
                                     ? list.filter((item: any) => field.value?.includes(item.value))
-                                    : list.find((item: any) => item.value === field.value)
+                                    : list.find((item: any) => item.value === field.value) || null
                             }
                             onChange={(selected: any) => {
                                 if (isMulti) {

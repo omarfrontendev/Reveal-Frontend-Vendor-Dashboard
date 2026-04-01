@@ -192,6 +192,9 @@
     },
     "profilePermission": {
       "label": "Profile Permissions"
+    },
+    "booth": {
+      "label": "Booth"
     }
   },
   "buttons": {
@@ -248,7 +251,9 @@
     "invalidTime": "Invalid time format",
     "endAfterStart": "End time must be after start time",
     "invalidURL": "Invalid URL",
-    "profileIdRequired": "profile Permissions Required"
+    "profileIdRequired": "profile Permissions Required",
+    "boothIdRequired": "Booth is required",
+    "shiftIdRequired": "Shift is required"
   },
   "filters": {
     "status": "Status"

@@ -16,10 +16,10 @@ const fetcher = async <T>(url: string): Promise<T> => {
     return response.data?.data?.VendorArea as T;
 };
 
-export const useAreas = () => {
+export const useAreas = (enable: boolean = true) => {
 
     const { vendorId } = useSelector((state: any) => state.auth);
-    const { data, error, isLoading, mutate } = useSWR<AreaBody[]>(`${endpoints.area.getAreas}?page=1&limit=100&vendorId=${vendorId}`, fetcher);
+    const { data, error, isLoading, mutate } = useSWR<AreaBody[]>(enable ? `${endpoints.area.getAreas}?page=1&limit=100&vendorId=${vendorId}` : null, fetcher);
 
     return {
         areas: data || [],

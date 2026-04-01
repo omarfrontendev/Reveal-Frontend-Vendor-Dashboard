@@ -5,6 +5,7 @@ import { toast } from 'sonner';
 import { endpoints } from '@/api/endpoints';
 import type { CreateShiftResponse } from '@/types/shifts';
 import type { User } from '@/types/users';
+import { cleanAndTrim } from '@/utils/clean-data';
 
 type Params = {
   id?: string;
@@ -24,8 +25,9 @@ export const useUpsertUser = ({ id }: Params = {}) => {
       const profileId = body?.profileId;
 
       delete body.profileId;
+      const cleanedBody = cleanAndTrim(body);
 
-      const { data } = await api[method]<CreateShiftResponse>(url, body);
+      const { data } = await api[method]<CreateShiftResponse>(url, cleanedBody);
 
       if (profileId) {
         await api.post('/vendors/permissions/assign', {
