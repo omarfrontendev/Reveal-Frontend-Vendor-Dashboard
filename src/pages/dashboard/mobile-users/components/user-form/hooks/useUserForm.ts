@@ -56,6 +56,8 @@ export const useUserForm = (id?: string) => {
         }
     }, [role]);
 
+    console.log(form.formState.errors);
+
     // map user
     const mapUserToForm = (user: User) => ({
         email: user.email,
