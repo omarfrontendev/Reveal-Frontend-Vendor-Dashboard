@@ -79,11 +79,10 @@ export const getUserSchema = () => {
                 .nonempty({ message: 'dealerIdRequired' }),
 
             vendorBoothId: z.number().nullable().optional(),
-            vendorShiftId: z.number().nullable().optional(),
+            vendorShiftIds: z.array(z.number({ message: "shiftIdsRequired" })).optional(),
             vendorAreaId: z.number().nullable().optional(),
             vendorRegionId: z.number().nullable().optional(),
             vendorSubRegionId: z.number().nullable().optional(),
-            // vendorId: z.number(),
         })
         .superRefine((data, ctx) => {
             if (data.role === "VendorMobileSales" && !data.vendorBoothId) {
@@ -93,9 +92,9 @@ export const getUserSchema = () => {
                     message: "boothIdRequired",
                 });
             }
-            if (data.role === "VendorMobileSales" && !data.vendorShiftId) {
+            if (data.role === "VendorMobileSales" && !data.vendorShiftIds) {
                 ctx.addIssue({
-                    path: ["vendorShiftId"],
+                    path: ["vendorShiftIds"],
                     code: z.ZodIssueCode.custom,
                     message: "shiftIdRequired",
                 });

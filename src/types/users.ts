@@ -14,7 +14,7 @@ export interface User {
   dealerId?: string | null
   employeeCode?: string | null
   vendorBoothId?: number | null
-  vendorShiftId?: number | null
+  vendorShifts?: any[] | null
   vendorAreaId?: number | null
   vendorRegionId?: number | null
   vendorSubRegionId?: number | null

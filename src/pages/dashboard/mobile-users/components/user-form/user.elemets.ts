@@ -98,13 +98,14 @@ export const salesAgentRequiredFields = (booths: any[], boothsLoading: boolean, 
         isLoading: boothsLoading
     },
     {
-        name: "vendorShiftId",
+        name: "vendorShiftIds",
         label: "shift",
         placeholder: "shift.placeholder",
         colSpan: "col-span-6",
         type: "select",
         required: true,
         list: shifts,
+        isMulti: true,
         isLoading: shiftsLoading
     }];
 

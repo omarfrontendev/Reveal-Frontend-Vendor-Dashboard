@@ -49,7 +49,7 @@ export const useUserForm = (id?: string) => {
     // reset on role change
     useEffect(() => {
         if (role !== "VendorMobileSales") {
-            resetFields(["vendorShiftId", "vendorBoothId"], form);
+            resetFields(["vendorShiftIds", "vendorBoothId"], form);
         }
         if (role !== "VendorMobileSupervisor") {
             resetFields(["vendorAreaId", "vendorRegionId", "vendorSubRegionId"], form);
@@ -67,7 +67,7 @@ export const useUserForm = (id?: string) => {
         employeeCode: user.employeeCode,
         dealerId: user.dealerId,
         vendorBoothId: user.vendorBoothId,
-        vendorShiftId: user.vendorShiftId,
+        vendorShiftIds: user.vendorShifts?.map(shift => shift?.id),
         vendorAreaId: user.vendorAreaId,
         vendorRegionId: user.vendorRegionId,
         vendorSubRegionId: user.vendorSubRegionId,
@@ -93,7 +93,7 @@ export const useUserForm = (id?: string) => {
             isFirstBoothRender.current = false;
             return;
         }
-        resetFields(["vendorShiftId"], form);
+        resetFields(["vendorShiftIds"], form);
     }, [boothId]);
 
     useEffect(() => {
